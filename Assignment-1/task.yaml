@@ -2,15 +2,15 @@
   hosts: web
   become: yes
   tasks: 
-  - name: Copy file to remote location
+  - name: Install httpd
     ansible.builtin.yum:
       name: httpd
-      status: installed
+      state: installed
                 
-  - name: Copy file to remote location
+  - name: Start httpd
     ansible.builtin.service:
       name: httpd
-      status: started
+      state: started
 
   - name: Copy file to remote location
     ansible.builtin.copy:
