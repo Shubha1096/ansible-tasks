@@ -1,0 +1,18 @@
+- name: Copy task
+  hosts: web
+  become: yes
+  tasks: 
+    - name: Copy file to remote location
+      ansible.builtin.yum:
+        name: httpd
+        status: installed
+                
+    - name: Copy file to remote location
+      ansible.builtin.service:
+        name: httpd
+        status: started
+
+    - name: Copy file to remote location
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html
