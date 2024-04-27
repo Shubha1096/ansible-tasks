@@ -62,5 +62,14 @@
     ansible.builtin.copy:
       src: /home/centos/ansible-tasks/Assignment-2/tomcat.service
       dest: /etc/systemd/system/tomcat.service   
+
+  - name: daemon reload
+      ansible.builtin.systemd_service:
+        daemon_reload: true    
+
+  - name: Start tomcat
+    ansible.builtin.systemd_service:
+      state: started
+      name: tomcat      
     
        
