@@ -27,7 +27,7 @@
   - name: Download apache-tomcat
     ansible.builtin.uri:
       url: "http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.5.31/bin/apache-tomcat-8.5.31.tar.gz"
-      method: GET
+      method: POST
       dest: /home/ubuntu
 
   - name: Create a "tomcat" directory if it does not exist
