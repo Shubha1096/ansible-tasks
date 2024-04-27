@@ -6,10 +6,10 @@
     ansible.builtin.apt:
       upgrade: yes
       update_cache: yes
-      
+
   - name: Install Python
     ansible.builtin.apt:
-      name: python-software-properties
+      name: python-software-common
       state: present
 
   - name: Add specified repository into sources list
