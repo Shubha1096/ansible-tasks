@@ -1,0 +1,35 @@
+- name: Setup Apache Tomcat
+  hosts: web
+  become: yes
+  tasks: 
+
+  - name: Install default-jdk
+    ansible.builtin.apt:
+      name: default-jdk
+      state: present-y python-software-properties
+
+  - name: Add specified repository into sources list
+    ansible.builtin.apt_repository:
+      repo: ppa:webupd8team/java
+      state: present    
+
+   - name : Update Instance
+    ansible.builtin.apt:
+      upgrade: yes
+      update_cache: yes
+
+  - name: Install default-jdk
+    ansible.builtin.apt:
+      name: default-jdk
+      state: present    
+
+  - name: Download foo.conf
+    ansible.builtin.get_url:
+      url: http://apache.mirror.digitalpacific.com.au/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+      dest: /home/ubuntu  
+
+    - name: Extract apache-tomcat tar.gz into /opt/tomcat
+      ansible.builtin.unarchive:
+        src: /home/ubuntu/apache-maven-3.3.9-bin.tar.gz
+        dest: opt/ 
+        remote_src: yes    
