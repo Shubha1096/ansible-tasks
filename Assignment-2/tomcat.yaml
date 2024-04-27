@@ -39,9 +39,6 @@
       extra_opts: "--strip-components=1"
       remote_src: yes
 
-  - name: Change directory to /opt/tomcat
-    ansible.builtin.command: cd /opt/tomcat
-
   - name: Change group ownership of /opt/tomcat to tomcat
     ansible.builtin.file:
       path: /opt/tomcat
