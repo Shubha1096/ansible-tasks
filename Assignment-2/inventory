@@ -3,4 +3,4 @@
 
 [web:vars]
 ansible_user = centos
-ansible_passworf = DevOps123
+ansible_password = DevOps321
