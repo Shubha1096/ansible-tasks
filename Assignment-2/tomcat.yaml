@@ -4,8 +4,8 @@
   tasks: 
   - name : Update Instance
     ansible.builtin.apt:
-    upgrade: yes
-    update_cache: yes
+      upgrade: yes
+      update_cache: yes
 
   - name: Install default-jdk
     ansible.builtin.apt:
