@@ -9,8 +9,11 @@
 
   - name: Install Python
     ansible.builtin.apt:
-      name: python-software-common
+      name: "{{item}}"
       state: present
+      loop: 
+      - python-software-common
+      - python-software-properties
 
   - name: Add specified repository into sources list
     ansible.builtin.apt_repository:
