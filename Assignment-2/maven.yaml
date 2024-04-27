@@ -3,9 +3,9 @@
   become: yes
   tasks: 
 
-  - name: Install default-jdk
+  - name: Install Python
     ansible.builtin.apt:
-      name: present-y python-software-properties
+      name: python-software-properties
       state: present
 
   - name: Add specified repository into sources list
