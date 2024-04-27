@@ -25,7 +25,7 @@
       group: tomcat        
 
   - name: Download apache-tomcat
-    ansible.builtin.command: curl -O http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.5.31/bin/apache-tomcat-8.5.31.tar.gz
+    ansible.builtin.command: curl -O https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.88/src/apache-tomcat-9.0.88-src.tar.gz
 
   - name: Create a "tomcat" directory if it does not exist
     ansible.builtin.file:
@@ -34,7 +34,7 @@
 
   - name: Extract apache-tomcat tar.gz into /opt/tomcat
     ansible.builtin.unarchive:
-      src: /home/ubuntu/apache-tomcat-8.5.31.tar.gz
+      src: /home/ubuntu/apache-tomcat-9.0.88-src.tar.gz
       dest: /opt/tomcat  
       extra_opts: "--strip-components=1"
       remote_src: yes
