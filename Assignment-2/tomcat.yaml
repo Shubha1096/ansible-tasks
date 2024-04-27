@@ -17,57 +17,57 @@
       name: somegroup
       state: present   
 
-    - name: add "tomcat" user to group "tomcat"
-      ansible.builtin.user:
-        name: tomcat
-        shell: /bin/false
-        home: /opt/tomcat
-        group: tomcat        
+  - name: add "tomcat" user to group "tomcat"
+    ansible.builtin.user:
+      name: tomcat
+      shell: /bin/false
+      home: /opt/tomcat
+      group: tomcat        
 
-    - name: Download apache-tomcat
-      ansible.builtin.get_url:
-        url: http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.5.31/bin/apache-tomcat-8.5.31.tar.gz
-        dest: /home/ubuntu
+  - name: Download apache-tomcat
+    ansible.builtin.get_url:
+      url: http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.5.31/bin/apache-tomcat-8.5.31.tar.gz
+      dest: /home/ubuntu
 
-    - name: Create a "tomcat" directory if it does not exist
-      ansible.builtin.file:
-        path: /opt/tomcat
-        state: directory    
+  - name: Create a "tomcat" directory if it does not exist
+    ansible.builtin.file:
+      path: /opt/tomcat
+      state: directory    
 
-    - name: Extract apache-tomcat-8.5.31.tar.gz into /opt/tomcat
-      ansible.builtin.unarchive:
-        src: /home/ubuntu/apache-tomcat-8.5.31.tar.gz
-        dest: /opt/tomcat  
-        extra_opts: "--strip-components=1"
-        remote_src: yes
+  - name: Extract apache-tomcat-8.5.31.tar.gz into /opt/tomcat
+    ansible.builtin.unarchive:
+      src: /home/ubuntu/apache-tomcat-8.5.31.tar.gz
+      dest: /opt/tomcat  
+      extra_opts: "--strip-components=1"
+      remote_src: yes
 
-    - name: Change directory to /opt/tomcat
-      ansible.builtin.command:
-        cmd: cd /opt/tomcat
-        chdir: /opt/tomcat 
+  - name: Change directory to /opt/tomcat
+    ansible.builtin.command:
+      cmd: cd /opt/tomcat
+      chdir: /opt/tomcat 
 
-    - name: Change group ownership of /opt/tomcat to tomcat
-      ansible.builtin.file:
-        path: /opt/tomcat
-        recurse: yes
-        group: tomcat
-        state: directory
+  - name: Change group ownership of /opt/tomcat to tomcat
+    ansible.builtin.file:
+      path: /opt/tomcat
+      recurse: yes
+      group: tomcat
+      state: directory
 
-    - name: Set permissions for conf directory
-      ansible.builtin.file:
-        path: /opt/tomcat/conf
-        recurse: yes
-        mode: "g+rX"  
+  - name: Set permissions for conf directory
+    ansible.builtin.file:
+      path: /opt/tomcat/conf
+      recurse: yes
+      mode: "g+rX"  
 
-    - name: Change file ownership, group and permissions
-      ansible.builtin.file:
-        path:  webapps/work/temp/logs/
-        recurse: yes
-        group: tomcat   
+  - name: Change file ownership, group and permissions
+    ansible.builtin.file:
+      path:  webapps/work/temp/logs/
+      recurse: yes
+      group: tomcat   
 
-    - name: Copy file with owner and permissions
-      ansible.builtin.copy:
-        src: /home/centos/ansible-tasks/Assignment-2/tomcat.service
-        dest: /etc/systemd/system/tomcat.service   
+  - name: Copy file with owner and permissions
+    ansible.builtin.copy:
+      src: /home/centos/ansible-tasks/Assignment-2/tomcat.service
+      dest: /etc/systemd/system/tomcat.service   
     
        
