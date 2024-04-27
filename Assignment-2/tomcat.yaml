@@ -25,7 +25,7 @@
       group: tomcat        
 
   - name: Download apache-tomcat
-    ansible.builtin.command: curl -O /home/ubuntu http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.5.31/bin/apache-tomcat-8.5.31.tar.gz
+    ansible.builtin.command: curl -O http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.5.31/bin/apache-tomcat-8.5.31.tar.gz
 
   - name: Create a "tomcat" directory if it does not exist
     ansible.builtin.file:
