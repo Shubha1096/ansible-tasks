@@ -2,11 +2,7 @@
   hosts: web
   become: yes
   tasks: 
-  - name : Update Instance
-    ansible.builtin.apt:
-      upgrade: yes
-      update_cache: yes
-
+  
   - name: Install Python
     ansible.builtin.apt:
       name: python3-software-properties
