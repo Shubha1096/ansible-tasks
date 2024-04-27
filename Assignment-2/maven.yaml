@@ -14,9 +14,9 @@
       state: present    
 
   - name : Update Instance
-  ansible.builtin.apt:
-    upgrade: yes
-    update_cache: yes
+    ansible.builtin.apt:
+      upgrade: yes
+      update_cache: yes
 
   - name: Install default-jdk
     ansible.builtin.apt:
@@ -28,8 +28,8 @@
       url: http://apache.mirror.digitalpacific.com.au/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
       dest: /home/ubuntu  
 
-    - name: Extract apache-tomcat tar.gz into /opt/tomcat
-      ansible.builtin.unarchive:
-        src: /home/ubuntu/apache-maven-3.3.9-bin.tar.gz
-        dest: opt/ 
-        remote_src: yes    
+  - name: Extract apache-tomcat tar.gz into /opt/tomcat
+    ansible.builtin.unarchive:
+      src: /home/ubuntu/apache-maven-3.3.9-bin.tar.gz
+      dest: opt/ 
+      remote_src: yes    
