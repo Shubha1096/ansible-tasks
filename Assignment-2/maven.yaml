@@ -12,8 +12,8 @@
       name: "{{ item }}"
       state: present
     loop: 
-    - python-software-common
-    - python-software-properties
+    - python3-software-common
+    - python3-software-properties
 
   - name: Add specified repository into sources list
     ansible.builtin.apt_repository:
