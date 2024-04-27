@@ -5,8 +5,8 @@
 
   - name: Install default-jdk
     ansible.builtin.apt:
-      name: default-jdk
-      state: present-y python-software-properties
+      name: present-y python-software-properties
+      state: present
 
   - name: Add specified repository into sources list
     ansible.builtin.apt_repository:
