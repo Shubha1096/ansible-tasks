@@ -14,7 +14,7 @@
 
   - name: Create group "tomcat"
     ansible.builtin.group:
-      name: somegroup
+      name: tomcat
       state: present   
 
   - name: add "tomcat" user to group "tomcat"
