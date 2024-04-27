@@ -12,7 +12,6 @@
       name: "{{ item }}"
       state: present
     loop: 
-    - python3-software-common
     - python3-software-properties
 
   - name: Add specified repository into sources list
