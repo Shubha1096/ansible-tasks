@@ -27,7 +27,7 @@
   - name: Download apache-tomcat
     ansible.builtin.get_url:
       url: http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.5.31/bin/apache-tomcat-8.5.31.tar.gz
-      dest: /home/ubuntu/
+      dest: /home/ubuntu/apache-tomcat-8.5.31.tar.gz
 
   - name: Create a "tomcat" directory if it does not exist
     ansible.builtin.file:
