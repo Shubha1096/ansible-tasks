@@ -25,7 +25,7 @@
       group: tomcat        
 
   - name: Download apache-tomcat
-    ansible.builtin.get_url:
+    ansible.builtin.uri:
       url: "http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.5.31/bin/apache-tomcat-8.5.31.tar.gz"
       dest: /home/ubuntu
 
