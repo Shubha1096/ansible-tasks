@@ -58,7 +58,7 @@
       recurse: yes
       group: tomcat   
 
-  - name: Copy file with owner and permissions
+  - name: Copy file tomcat service file
     ansible.builtin.copy:
       src: /home/centos/ansible-tasks/Assignment-2/tomcat.service
       dest: /etc/systemd/system/tomcat.service   
