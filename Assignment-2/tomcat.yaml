@@ -41,7 +41,6 @@
 
   - name: Change directory to /opt/tomcat
     ansible.builtin.command: cd /opt/tomcat
-      chdir: /opt/tomcat 
 
   - name: Change group ownership of /opt/tomcat to tomcat
     ansible.builtin.file:
