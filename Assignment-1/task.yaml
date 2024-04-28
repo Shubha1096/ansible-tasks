@@ -1,5 +1,5 @@
 - name: Copy task
-  hosts: web
+  hosts: localhost
   become: yes
   tasks: 
   - name: Install httpd
