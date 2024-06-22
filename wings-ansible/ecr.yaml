@@ -9,5 +9,10 @@
         path: /root/python-flask-docker
       name: 160700493165.dkr.ecr.ap-northeast-1.amazonaws.com/sample-app:v1
       tag: v1
-      push: true
+      push: false
       source: build
+
+  - name: push image to ecr
+    docker_image:
+      name: "160700493165.dkr.ecr.ap-northeast-1.amazonaws.com/sample-app:latest"
+      push: yes    
