@@ -7,8 +7,8 @@
     docker_image:
       build:
         path: /root/python-flask-docker
-      name: 160700493165.dkr.ecr.ap-northeast-1.amazonaws.com/sample-app:v1
-      tag: v1
+      name: 160700493165.dkr.ecr.ap-northeast-1.amazonaws.com/sample-app:v2
+      tag: v2
       push: yes
       source: build
 
