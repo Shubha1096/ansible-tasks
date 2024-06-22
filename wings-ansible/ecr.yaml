@@ -4,16 +4,17 @@
   tasks: 
 
   - name: Build an Docker image and push it to a ECR
-    community.docker.docker_image:
+     docker_image:
       build:
         path: /root/python-flask-docker
       name: 160700493165.dkr.ecr.ap-northeast-1.amazonaws.com/sample-app:v1
       tag: v1
+      push: yes
       source: build
 
-  - name: push image to ecr
-    docker_image:
-      name: "160700493165.dkr.ecr.ap-northeast-1.amazonaws.com/sample-app:v1"
-      repository: 160700493165.dkr.ecr.ap-northeast-1.amazonaws.com/sample-app:v1
-      push: yes    
-      source: local
+  # - name: push image to ecr
+  #   docker_image:
+  #     name: "160700493165.dkr.ecr.ap-northeast-1.amazonaws.com/sample-app:v1"
+  #     repository: 160700493165.dkr.ecr.ap-northeast-1.amazonaws.com/sample-app:v1
+  #     push: yes    
+  #     source: local
