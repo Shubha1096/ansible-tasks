@@ -6,7 +6,7 @@
   - name: Build an Docker image and push it to a ECR
     community.docker.docker_image:
       build:
-        path: python-flask-docker
+        path: /root/python-flask-docker
       name: 160700493165.dkr.ecr.ap-northeast-1.amazonaws.com/sample-app:v1
       tag: v1
       push: true
