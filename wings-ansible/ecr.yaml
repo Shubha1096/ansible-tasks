@@ -13,7 +13,7 @@
 
   - name: push image to ecr
     docker_image:
-      name: "160700493165.dkr.ecr.ap-northeast-1.amazonaws.com/sample-app:latest"
-      repository: 160700493165.dkr.ecr.ap-northeast-1.amazonaws.com/sample-app:latest
+      name: "160700493165.dkr.ecr.ap-northeast-1.amazonaws.com/sample-app:v1"
+      repository: 160700493165.dkr.ecr.ap-northeast-1.amazonaws.com/sample-app:v1
       push: yes    
       source: local
